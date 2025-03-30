@@ -1,0 +1,169 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Thanh điều hướng */
+  .navbar {
+    background-color: #333; 
+    padding: 10px 20px;
+}
+
+.nav-links {
+    display: flex; 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    justify-content: center; 
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: white; /* Màu chữ */
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px; /* Bo góc cho các mục */
+    transition: background-color 0.3s ease; /* Hiệu ứng khi di chuột */
+}
+
+.nav-links a:hover {
+    background-color: #555; /* Màu nền khi di chuột */
+}
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    color: #ddd;
+  }
+  
+  /* Phần danh mục sản phẩm */
+  .portfolio {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .portfolio h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+  
+  /* Đặt kích thước và căn chỉnh cho các mục sản phẩm */
+  .grid {
+    display: flex; /* Sử dụng Flexbox để sắp xếp các mục theo hàng ngang */
+    gap: 20px; /* Khoảng cách giữa các mục */
+    justify-content: flex-start; /* Căn các mục về bên trái */
+    flex-wrap: nowrap; /* Không cho phép xuống dòng */
+    overflow-x: auto; /* Thêm thanh cuộn ngang nếu không đủ không gian */
+    padding: 10px;
+}
+
+.item {
+    flex: 0 0 auto; /* Đảm bảo các mục không co giãn và giữ nguyên kích thước */
+    width: 300px; /* Kích thước cố định cho mỗi mục */
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    transition: transform 0.3s ease; /* Hiệu ứng thu nhỏ */
+}
+
+.default-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+    opacity: 1; /* Hiển thị ảnh mặc định */
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+    opacity: 0; /* Ẩn ảnh hover */
+}
+
+.item:hover .default-img {
+    opacity: 0; /* Ẩn ảnh mặc định khi hover */
+}
+
+.item:hover .hover-img {
+    opacity: 1; /* Hiển thị ảnh hover khi hover */
+}
+
+.item:hover img {
+    transform: scale(0.9); /* Thu nhỏ hình ảnh khi di chuột */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Nền mờ cho phần chữ */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Ẩn overlay mặc định */
+}
+
+.item:hover .overlay {
+    opacity: 1; /* Hiển thị overlay khi di chuột */
+}
+  
+  .overlay h3 {
+    font-size: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Ẩn menu trên mobile */
+    }
+    .grid {
+      grid-template-columns: 1fr; /* Một cột trên mobile */
+    }
+  }
